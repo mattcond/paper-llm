@@ -1,6 +1,6 @@
 services:
   opendataloader:
-    image: ghcr.io/opendataloader/opendataloader:latest
+    image: ghcr.io/opendataloader-project/opendataloader-pdf-hybrid:latest
     container_name: opendataloader
     ports:
       - "2000:8000"
