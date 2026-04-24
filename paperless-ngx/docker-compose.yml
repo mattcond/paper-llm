@@ -58,6 +58,9 @@ services:
     environment:
       PAPERLESS_REDIS: redis://:mariopass@broker:6379
       PAPERLESS_DBHOST: db
+      PAPERLESS_DBNAME: paperless
+      PAPERLESS_DBUSER: paperless
+      PAPERLESS_DBPASS: mariomariomario
 volumes:
   data:
   media:
