@@ -30,6 +30,8 @@ services:
     restart: unless-stopped
     volumes:
       - redisdata:/data
+    command: redis-server --requirepass mariopass --appendonly yes
+
   db:
     image: docker.io/library/postgres:18
     restart: unless-stopped
@@ -54,7 +56,7 @@ services:
       - ./consume:/usr/src/paperless/consume
     env_file: docker-compose.env
     environment:
-      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_REDIS: redis://:mariopass@broker:6379
       PAPERLESS_DBHOST: db
 volumes:
   data:
