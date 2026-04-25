@@ -61,6 +61,7 @@ services:
       PAPERLESS_DBNAME: paperless
       PAPERLESS_DBUSER: paperless
       PAPERLESS_DBPASS: mariomariomario
+      PAPERLESS_CSRF_TRUSTED_ORIGINS: https://thoth.groot.mysnippetjar.com
 volumes:
   data:
   media:
