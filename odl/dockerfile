@@ -1,0 +1,19 @@
+FROM python:3.11-slim
+
+# 1. Upgrade pip (come richiesto)
+RUN pip install --upgrade pip
+
+# 2. Installa uv
+RUN pip install uv
+
+# 3. Installa il tool via uv
+RUN uv pip install --system "opendataloader-pdf[hybrid]"
+
+# 4. Directory di lavoro
+WORKDIR /data
+
+# 5. Default entrypoint CLI (non server)
+ENTRYPOINT ["opendataloader-pdf-hybrid"]
+
+# Default help se nessun argomento viene passato
+CMD ["--help"]
